@@ -2,8 +2,11 @@
 const myLibrary = []; 
 
 // Book objects
-function Book() {
-  // the constructor...
+function Book(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
 }
 // Function that take user’s input and store the new book objects into an array
 function addBookToLibrary() {
