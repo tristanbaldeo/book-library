@@ -16,10 +16,9 @@
             </header>
 
             <div id="modal">
-                <form>
+                <form id="modal-form">
                     <div class="modal-header">
-                        <h5>New Book</h5>
-                        <button class="close-button" type="button"></button>
+                        <h2>New Book</h2>
                     </div>
                     <div class="form-item">
                         <label for="title">Title</label>
@@ -31,13 +30,16 @@
                     </div>
                     <div class="form-item">
                         <label for="pages">Pages</label>
-                        <input type="number" id="pages" required required min="1">
+                        <input type="number" id="pages" required min="1">
                     </div>
                     <div class="form-item" id="read-check">
                         <label for="read">Read</label>
-                        <input type="checkbox" id="read" value="read">
+                        <input type="checkbox" id="read">
                     </div>
-                    <button type="submit" id="add">Add</button>
+                    <div class="buttons">
+                        <button id="close-button" type="button">Close</button>
+                        <button type="submit" form="modal-form" id="add-book">Add</button>
+                    </div>
                 </form>
             </div>
 

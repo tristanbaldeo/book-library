@@ -11,6 +11,10 @@ body {
 
 main {
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 2rem;
     background-color: #f4f4f4;
 }
 
@@ -32,6 +36,23 @@ main {
     justify-content: center;
 }
 
+#add-book {
+    cursor: pointer;
+    background-color: #476c41;
+    padding: 16px 32px;
+    color: #f4f4f4;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 700;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, .5);
+    margin-top: 16px;
+}
+
+#add-book:active, #book:active {
+    background-color: #487e40;
+}
+
 #book {
     cursor: pointer;
     background-color: #476c41;
@@ -44,19 +65,61 @@ main {
     box-shadow: 0px 2px 4px rgba(0, 0, 0, .5);
     position: fixed;
     bottom: 32px;
-
-}
-
-#book:hover {
-    background-color: #487e40;
-}
-
-#book:active {
-    background-color: #487e40;
-    padding: 14px 30px;
 }
 
 #modal {
+    display: none;
+    position: absolute;
+    margin-top: 32px;
+    padding: 16px;
+    background-color: white;
+    border-radius: 4px;
+    border: 2px solid rgb(155, 155, 155);
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+    min-width: 480px;
+}
+
+#modal-form {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    border: none;
+}
+
+.modal-header {
+    display: flex;
+}
+
+#close-button {
+    cursor: pointer;
+    background-color: #686868;
+    padding: 16px 28px;
+    color: #f4f4f4;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 700;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, .5);
+    margin-top: 16px;
+}
+
+#close-button:active {
+    background-color: #7c7c7c;
+}
+
+#title, #author, #pages {
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    margin-top: 4px;
+}
+
+#read {
+    border-radius: 4px;
 }
