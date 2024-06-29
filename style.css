@@ -55,3 +55,8 @@ main {
     background-color: #487e40;
     padding: 14px 30px;
 }
+
+#modal {
+    display: flex;
+    justify-content: center;
+}

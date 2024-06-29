@@ -13,8 +13,10 @@ function addBookToLibrary() {
   // do stuff here
 }
 
-// Function for new book to be added with a form that states author, title, number of pages, and if it was read or not
+// Function for new book pop-up form to be added with a form that states author, title, number of pages, and if it was read or not
 
-// Function for read/not read book status
+// Function that updates the web page with the display on the book (might be included in function above)
 
-// Function for ability to remove book from list
+// Function for read/not read book status when selected
+
+// Function for ability to remove book from list with remove button
