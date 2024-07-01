@@ -5,6 +5,7 @@ const modal = document.getElementById("modal")
 const modalForm = document.getElementById("modal-form")
 const closeButton = document.getElementById("close-button")
 const addBook = document.getElementById("book")
+const bookLog = document.getElementById("book-log")
 
 // Book objects
 function Book(title, author, pages, read) {
@@ -39,6 +40,7 @@ modalForm.addEventListener('submit', (e) => {
   e.preventDefault();
   addBookToLibrary(title, author, pages, read);
   modalForm.reset();
+  renderLibrary()
 });
 
 addBook.addEventListener('click', () => {
@@ -50,7 +52,25 @@ closeButton.addEventListener('click', () => {
 });
 
 // Function that updates the web page with the display on the book (might be included in function above)
+function renderLibrary() {
+  bookLog.innerHTML = '';
+  library.forEach((book, index) => {
+      const bookCard = document.createElement('div');
+      bookCard.classList.add('book-card');
+      bookCard.innerHTML = `
+          <h3 class="book-title">${book.title}</h3>
+          <h4 class="book-author">${book.author}</h4>
+          <p class="page-count">${book.pages} pages</p>
+          <div class="book-buttons">
+            <button class="read">Read</button>
+            <button class="remove">DEL</button>
+          </div>
+      `;
+      bookLog.appendChild(bookCard);
+  });
+}
 
+renderLibrary()
 
 // Function for read/not read book status when selected
 
