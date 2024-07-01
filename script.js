@@ -1,20 +1,10 @@
 // Array that book objects are going to be stored into
-const myLibrary = []; 
+const library = []; 
 
 const modal = document.getElementById("modal")
 const modalForm = document.getElementById("modal-form")
-const buttons = document.getElementById("buttons")
 const closeButton = document.getElementById("close-button")
-const addButton = document.getElementById("add-button")
 const addBook = document.getElementById("book")
-const bookCard = document.querySelectorAll('.book-card')
-const bookTitle = document.querySelectorAll('.book-title')
-const bookAuthor = document.querySelectorAll('.book-author')
-const pageCount = document.querySelectorAll('.page-count')
-const bookButtons = document.querySelectorAll('.book-buttons')
-const read = document.querySelectorAll('.read')
-const remove = document.querySelectorAll('.remove')
-const formItem = document.querySelectorAll('.form-item')
 
 // Book objects
 function Book(title, author, pages, read) {
@@ -23,13 +13,34 @@ function Book(title, author, pages, read) {
     this.pages = pages;
     this.read = read;
 }
+
+function createBook(title, author, pages, read) {
+  const newBook = Object.create(Book.prototype);
+  newBook.title = title;
+  newBook.author = author;
+  newBook.pages = pages;
+  newBook.read = read;
+  return newBook;
+}
+
 // Function that take user’s input and store the new book objects into an array
 function addBookToLibrary() {
-  const newBook = new Book(title, author, pages, read);
-  myLibrary.push(newBook);
+  const newBook = createBook(
+    document.getElementById("title").value,
+    document.getElementById("author").value,
+    document.getElementById("pages").value,
+    document.getElementById("read").checked
+  );
+  library.push(newBook);
 }
 
 // Function for new book pop-up form to be added with a form that states author, title, number of pages, and if it was read or not
+modalForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  addBookToLibrary(title, author, pages, read);
+  modalForm.reset();
+});
+
 addBook.addEventListener('click', () => {
   modal.style.display = 'block';
 });
