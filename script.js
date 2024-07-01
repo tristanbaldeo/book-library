@@ -25,7 +25,8 @@ function Book(title, author, pages, read) {
 }
 // Function that take user’s input and store the new book objects into an array
 function addBookToLibrary() {
-  // do stuff here
+  const newBook = new Book(title, author, pages, read);
+  myLibrary.push(newBook);
 }
 
 // Function for new book pop-up form to be added with a form that states author, title, number of pages, and if it was read or not
