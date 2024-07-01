@@ -6,6 +6,8 @@ const modalForm = document.getElementById("modal-form")
 const closeButton = document.getElementById("close-button")
 const addBook = document.getElementById("book")
 const bookLog = document.getElementById("book-log")
+const readBook = document.querySelector(".read")
+const remove = document.getElementsByClassName("remove")
 
 // Book objects
 function Book(title, author, pages, read) {
@@ -67,12 +69,14 @@ function renderLibrary() {
           </div>
       `;
       bookLog.appendChild(bookCard);
+
+      bookCard.querySelector('.remove').addEventListener('click', () => {
+        library.splice(index, 1);
+        renderLibrary(); 
+      });
   });
 }
 
 renderLibrary()
 
 // Function for read/not read book status when selected
-
-
-// Function for ability to remove book from list with remove button
