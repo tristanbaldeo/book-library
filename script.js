@@ -63,10 +63,13 @@ function renderLibrary() {
           <h4 class="book-author">${book.author}</h4>
           <p class="page-count">${book.pages} pages</p>
           <div class="book-buttons">
-            <button class="read">Read</button>
+            <button class="read">${book.read ? 'Read' : 'Not Read'}</button>
             <button class="remove">DEL</button>
           </div>
       `;
+
+      const readButton = bookCard.querySelector('.read');
+      readButton.classList.add(book.read ? 'read' : 'not-read');
       bookLog.appendChild(bookCard);
 
       bookCard.querySelector('.remove').addEventListener('click', () => {
@@ -74,17 +77,13 @@ function renderLibrary() {
         renderLibrary()
       });
 
-      const readButton = bookCard.querySelector('.read');
       readButton.addEventListener("click", ()=>{
         book.read = !book.read
         readButton.textContent = book.read ? 'Read' : 'Not Read';
         readButton.classList.toggle('not-read', !book.read);
+        readButton.classList.toggle('read', book.read);
       });
     });
   };
 
 renderLibrary()
-
-// Function to toggle read/not read
-
-// Function for read/not read to be determine in modal
