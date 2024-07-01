@@ -36,7 +36,7 @@ main {
     justify-content: center;
 }
 
-#add-button {
+#add-button, #book, .read, .not-read, .remove {
     cursor: pointer;
     background-color: #476c41;
     padding: 16px 32px;
@@ -54,15 +54,6 @@ main {
 }
 
 #book {
-    cursor: pointer;
-    background-color: #476c41;
-    padding: 16px 32px;
-    color: #f4f4f4;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    font-weight: 700;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, .5);
     position: fixed;
     bottom: 32px;
 }
@@ -124,6 +115,14 @@ main {
     border-radius: 4px;
 }
 
+#book-log {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 28ch);
+    gap: 16px;
+    justify-content: center;
+}
+
 .book-card {
     margin-top: 32px;
     padding: 16px;
@@ -150,43 +149,17 @@ main {
 }
 
 
-.read {
-    cursor: pointer;
-    background-color: #476c41;
+.read, .not-read {
     padding: 8px 32px;
-    color: #f4f4f4;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    font-weight: 700;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, .5);
-    margin-top: 16px;
 }
 
 .not-read {
-    cursor: pointer;
     background-color: #686868;
-    padding: 8px 32px;
-    color: #f4f4f4;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    font-weight: 700;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, .5);
-    margin-top: 16px;
 }
 
 .remove {
-    cursor: pointer;
     background-color: #583500;
     padding: 8px 6px;
-    color: #f4f4f4;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    font-weight: 700;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, .5);
-    margin-top: 16px;
 }
 
 .remove:active {

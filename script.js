@@ -7,7 +7,6 @@ const closeButton = document.getElementById("close-button")
 const addBook = document.getElementById("book")
 const bookLog = document.getElementById("book-log")
 const remove = document.getElementsByClassName("remove")
-const readCheckbox = document.getElementById("read")
 
 // Book objects
 function Book(title, author, pages, read) {
@@ -76,15 +75,16 @@ function renderLibrary() {
       });
 
       const readButton = bookCard.querySelector('.read');
-      readButton.addEventListener('click', () => {
-          book.read = !book.read;
-          readButton.textContent = book.read ? 'Read' : 'Not Read';
-          readButton.classList.toggle('not-read', !book.read);
+      readButton.addEventListener("click", ()=>{
+        book.read = !book.read
+        readButton.textContent = book.read ? 'Read' : 'Not Read';
+        readButton.classList.toggle('not-read', !book.read);
       });
-  });
-};
+    });
+  };
 
 renderLibrary()
 
+// Function to toggle read/not read
 
-// Function for read/not read book status when selected
+// Function for read/not read to be determine in modal
