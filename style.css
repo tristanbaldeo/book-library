@@ -36,7 +36,7 @@ main {
     justify-content: center;
 }
 
-#add-book {
+#add-button {
     cursor: pointer;
     background-color: #476c41;
     padding: 16px 32px;
@@ -49,7 +49,7 @@ main {
     margin-top: 16px;
 }
 
-#add-book:active, #book:active, .read:active {
+#add-button:active, #book:active, .read:active {
     background-color: #487e40;
 }
 
